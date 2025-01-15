@@ -11,8 +11,6 @@ export default function Home() {
         <h2 className="text-2xl font-bold">Server Actions</h2>
         <div className="flex flex-col gap-2">
           <Button onClick={action}>Unwrapped Error</Button>
-        </div>
-        <div className="flex flex-col gap-2">
           <Button onClick={instrumentedAction}>Wrapped Error</Button>
         </div>
       </div>
