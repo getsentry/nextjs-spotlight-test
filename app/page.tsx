@@ -1,7 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { action, instrumentedAction } from "@/lib/actions";
+import {
+  action,
+  actionWithError,
+  instrumentedAction,
+  instrumentedActionWithError,
+} from "@/lib/actions";
 import { nonAction, asyncNonAction } from "@/lib/handler";
 
 export default function Home() {
@@ -10,8 +15,10 @@ export default function Home() {
       <div className="flex flex-col gap-4">
         <h2 className="text-2xl font-bold">Server Actions</h2>
         <div className="flex flex-col gap-2">
-          <Button onClick={action}>Unwrapped Error</Button>
-          <Button onClick={instrumentedAction}>Wrapped Error</Button>
+          <Button onClick={action}>Successful</Button>
+          <Button onClick={instrumentedAction}>Successful Wrapped</Button>
+          <Button onClick={actionWithError}>Unwrapped Error</Button>
+          <Button onClick={instrumentedActionWithError}>Wrapped Error</Button>
         </div>
       </div>
 
