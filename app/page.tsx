@@ -23,6 +23,29 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col gap-4">
+        <h2 className="text-2xl font-bold">API Routes</h2>
+        <div className="flex flex-col gap-2">
+          <Button
+            onClick={() => {
+              return fetch("/api/error");
+            }}
+          >
+            Error (GET)
+          </Button>
+          <Button
+            onClick={() => {
+              return fetch("/api/error", {
+                method: "POST",
+                body: JSON.stringify("test payload"),
+              });
+            }}
+          >
+            Error (POST)
+          </Button>
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-4">
         <h2 className="text-2xl font-bold">Inline Functions</h2>
         <div className="flex flex-col gap-2">
           <Button
