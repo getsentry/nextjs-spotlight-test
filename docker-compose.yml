@@ -1,0 +1,8 @@
+version: "3.7"
+services:
+  spotlight:
+    image: ghcr.io/getsentry/spotlight:latest
+    restart: on-failure
+    ports:
+      - "8969:8969"
+
